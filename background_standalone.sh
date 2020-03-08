@@ -1,6 +1,10 @@
 #!/bin/bash
 /bin/date #Print the current date and time - useful for logging
 
+# Set the DBUS_SESSION_BUS_ADDRESS environment variable
+PID=$(pgrep gnome-session)
+export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
+
 #Create background dir
 mkdir -p ~/.background_meteosat
 cd ~/.background_meteosat || exit
@@ -49,7 +53,7 @@ if [ ! -s "${filepath}" ]; then
 	echo "I'm here"
 	path="\"file://"$filepath"\""
 	/bin/echo $filepath
-	/usr/bin/gsettings set org.gnome.desktop.background picture-uri $path
+	/usr/bin/gsettings set org.cinnamon.desktop.background picture-uri $path
 fi
 
 #Go to directory and delete every file except the current background

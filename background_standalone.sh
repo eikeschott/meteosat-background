@@ -2,8 +2,9 @@
 /bin/date #Print the current date and time - useful for logging
 
 # Set the DBUS_SESSION_BUS_ADDRESS environment variable
-PID=$(pgrep gnome-session)
-export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
+euid=$(id --real --user)
+pid=$(pgrep --euid $euid cinnamon-sess)
+export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ|cut -d= -f2-)
 
 #Create background dir
 mkdir -p ~/.background_meteosat

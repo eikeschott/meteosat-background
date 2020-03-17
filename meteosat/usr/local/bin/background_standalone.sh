@@ -55,6 +55,7 @@ if [ ! -s "${filepath}" ]; then
 	path="\"file://"$filepath"\""
 	/bin/echo $filepath
 	/usr/bin/gsettings set org.cinnamon.desktop.background picture-uri $path
+	/usr/bin/gsettings set org.cinnamon.desktop.background picture-options scaled
 fi
 
 #Go to directory and delete every file except the current background

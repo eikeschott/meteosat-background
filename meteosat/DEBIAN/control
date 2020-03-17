@@ -1,0 +1,8 @@
+Package: meteosat
+Version: 0.9-1
+Section: base
+Priority: optional
+Architecture: amd64
+Depends: imagemagick (>= 8:6.9.7.4+dfsg-16ubuntu6.8), gocr (>= 0.49-2build1), lftp (>= 4.8.1-1ubuntu0.1), sed (>= 4.4-2)
+Maintainer: Eike Schott <eikeschott0@gmail.com>
+Description: A package that sets up my background image script

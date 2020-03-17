@@ -1,0 +1,9 @@
+[Unit]
+Description=Starts meteosat.service every hour
+
+[Timer]
+OnBootSec=10s
+OnCalendar=*-*-* *:12,48:00
+
+[Install]
+WantedBy=timers.target

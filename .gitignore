@@ -1,4 +1,2 @@
 background_server.sh
-background_client.sh
-background_client_ftp.sh
-background_gif.sh
+*.deb

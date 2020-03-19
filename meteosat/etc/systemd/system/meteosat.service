@@ -4,5 +4,4 @@ After=networking.service
 
 [Service]
 Type=oneshot
-User=eike
 ExecStart=/bin/bash /usr/local/bin/background_standalone.sh
